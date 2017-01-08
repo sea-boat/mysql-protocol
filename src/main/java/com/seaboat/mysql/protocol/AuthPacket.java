@@ -1,10 +1,8 @@
 package com.seaboat.mysql.protocol;
 
-import java.io.IOException;
-import java.io.OutputStream;
+import java.nio.ByteBuffer;
 
 import com.seaboat.mysql.protocol.util.BufferUtil;
-import com.seaboat.mysql.protocol.util.StreamUtil;
 
 /**
  * 
@@ -13,7 +11,7 @@ import com.seaboat.mysql.protocol.util.StreamUtil;
  * @version 1.0
  * <pre><b>email: </b>849586227@qq.com</pre>
  * <pre><b>blog: </b>http://blog.csdn.net/wangyangzhizhou</pre>
- * <p>AuthPacket .</p>
+ * <p>mysql auth packet.</p>
  */
 public class AuthPacket extends MySQLPacket {
 	private static final byte[] FILLER = new byte[23];
@@ -49,27 +47,27 @@ public class AuthPacket extends MySQLPacket {
 		}
 	}
 
-	public void write(OutputStream out) throws IOException {
-		StreamUtil.writeUB3(out, calcPacketSize());
-		StreamUtil.write(out, packetId);
-		StreamUtil.writeUB4(out, clientFlags);
-		StreamUtil.writeUB4(out, maxPacketSize);
-		StreamUtil.write(out, (byte) charsetIndex);
-		out.write(FILLER);
+	public void write(ByteBuffer buffer) {
+		BufferUtil.writeUB3(buffer, calcPacketSize());
+		buffer.put(packetId);
+		BufferUtil.writeUB4(buffer, clientFlags);
+		BufferUtil.writeUB4(buffer, maxPacketSize);
+		buffer.put((byte) charsetIndex);
+		buffer.put(FILLER);
 		if (user == null) {
-			StreamUtil.write(out, (byte) 0);
+			buffer.put((byte) 0);
 		} else {
-			StreamUtil.writeWithNull(out, user.getBytes());
+			BufferUtil.writeWithNull(buffer, user.getBytes());
 		}
 		if (password == null) {
-			StreamUtil.write(out, (byte) 0);
+			buffer.put((byte) 0);
 		} else {
-			StreamUtil.writeWithLength(out, password);
+			BufferUtil.writeWithLength(buffer, password);
 		}
 		if (database == null) {
-			StreamUtil.write(out, (byte) 0);
+			buffer.put((byte) 0);
 		} else {
-			StreamUtil.writeWithNull(out, database.getBytes());
+			BufferUtil.writeWithNull(buffer, database.getBytes());
 		}
 	}
 
