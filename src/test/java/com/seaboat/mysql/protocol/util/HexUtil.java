@@ -1,4 +1,4 @@
-package com.seaboat.mysql.parser.util;
+package com.seaboat.mysql.protocol.util;
 
 /**
  * 

@@ -1,4 +1,4 @@
-package com.seaboat.mysql.parser;
+package com.seaboat.mysql.protocol;
 
 import static org.junit.Assert.assertTrue;
 
@@ -6,8 +6,8 @@ import java.nio.ByteBuffer;
 
 import org.junit.Test;
 
-import com.seaboat.mysql.parser.util.HexUtil;
 import com.seaboat.mysql.protocol.ErrorPacket;
+import com.seaboat.mysql.protocol.util.HexUtil;
 
 /**
  * 
