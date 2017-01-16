@@ -8,15 +8,14 @@ import org.junit.Test;
 
 import com.seaboat.mysql.protocol.ErrorPacket;
 import com.seaboat.mysql.protocol.util.HexUtil;
-
 /**
  * 
- * @author seaboat
- * @date 2016-09-25
- * @version 1.0
+ * <pre><b>test error packet.</b></pre>
+ * @author 
+ * <pre>seaboat</pre>
  * <pre><b>email: </b>849586227@qq.com</pre>
  * <pre><b>blog: </b>http://blog.csdn.net/wangyangzhizhou</pre>
- * <p>test auth packet.</p>
+ * @version 1.0
  */
 public class ErrorPacketTest {
 	@Test

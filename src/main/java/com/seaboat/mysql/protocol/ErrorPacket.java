@@ -3,15 +3,15 @@ package com.seaboat.mysql.protocol;
 import java.nio.ByteBuffer;
 
 import com.seaboat.mysql.protocol.util.BufferUtil;
-
 /**
  * 
- * @author seaboat
- * @date 2016-09-25
- * @version 1.0
+ * <pre><b>mysql error packet.</b></pre>
+ * @author 
+ * <pre>seaboat</pre>
  * <pre><b>email: </b>849586227@qq.com</pre>
  * <pre><b>blog: </b>http://blog.csdn.net/wangyangzhizhou</pre>
- * <p>mysql error packet.</p>
+ * @version 1.0
+ * @see http://dev.mysql.com/doc/internals/en/packet-ERR_Packet.html
  */
 public class ErrorPacket extends MySQLPacket {
 	public static final byte header = (byte) 0xff;

@@ -12,15 +12,14 @@ import com.seaboat.mysql.protocol.Capabilities;
 import com.seaboat.mysql.protocol.util.HexUtil;
 import com.seaboat.mysql.protocol.util.RandomUtil;
 import com.seaboat.mysql.protocol.util.SecurityUtil;
-
 /**
  * 
- * @author seaboat
- * @date 2016-09-25
- * @version 1.0
+ * <pre><b>test auth packet.</b></pre>
+ * @author 
+ * <pre>seaboat</pre>
  * <pre><b>email: </b>849586227@qq.com</pre>
  * <pre><b>blog: </b>http://blog.csdn.net/wangyangzhizhou</pre>
- * <p>test auth packet.</p>
+ * @version 1.0
  */
 public class AuthPacketTest {
 	@Test

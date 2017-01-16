@@ -2,12 +2,13 @@ package com.seaboat.mysql.protocol;
 
 /**
  * 
- * @author seaboat
- * @date 2016-09-25
- * @version 1.0
+ * <pre><b>server capabilities.</b></pre>
+ * @author 
+ * <pre>seaboat</pre>
  * <pre><b>email: </b>849586227@qq.com</pre>
  * <pre><b>blog: </b>http://blog.csdn.net/wangyangzhizhou</pre>
- * <p>server capabilities .</p>
+ * @version 1.0
+ * @see http://dev.mysql.com/doc/internals/en/capability-flags.html#packet-Protocol::CapabilityFlags
  */
 public interface Capabilities {
 

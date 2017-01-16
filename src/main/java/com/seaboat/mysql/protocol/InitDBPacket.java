@@ -3,15 +3,15 @@ package com.seaboat.mysql.protocol;
 import java.nio.ByteBuffer;
 
 import com.seaboat.mysql.protocol.util.BufferUtil;
-
 /**
  * 
- * @author seaboat
- * @date 2016-09-25
- * @version 1.0
+ * <pre><b>mysql init db packet.</b></pre>
+ * @author 
+ * <pre>seaboat</pre>
  * <pre><b>email: </b>849586227@qq.com</pre>
  * <pre><b>blog: </b>http://blog.csdn.net/wangyangzhizhou</pre>
- * <p>mysql init db packet.</p>
+ * @version 1.0
+ * @see http://dev.mysql.com/doc/internals/en/com-init-db.html
  */
 public class InitDBPacket extends MySQLPacket {
 	public byte[] schema;

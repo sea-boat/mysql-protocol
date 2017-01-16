@@ -12,15 +12,14 @@ import com.seaboat.mysql.protocol.HandshakePacket;
 import com.seaboat.mysql.protocol.Versions;
 import com.seaboat.mysql.protocol.util.HexUtil;
 import com.seaboat.mysql.protocol.util.RandomUtil;
-
 /**
  * 
- * @author seaboat
- * @date 2016-09-25
- * @version 1.0
+ * <pre><b>test handshake packet.</b></pre>
+ * @author 
+ * <pre>seaboat</pre>
  * <pre><b>email: </b>849586227@qq.com</pre>
  * <pre><b>blog: </b>http://blog.csdn.net/wangyangzhizhou</pre>
- * <p>test handshake packet.</p>
+ * @version 1.0
  */
 public class HandshakePacketTest {
 

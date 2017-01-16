@@ -5,12 +5,12 @@ import java.util.Map;
 
 /**
  * 
- * @author seaboat
- * @date 2016-09-25
- * @version 1.0
+ * <pre><b>server capabilities.</b></pre>
+ * @author 
+ * <pre>seaboat</pre>
  * <pre><b>email: </b>849586227@qq.com</pre>
  * <pre><b>blog: </b>http://blog.csdn.net/wangyangzhizhou</pre>
- * <p>a charset util.</p>
+ * @version 1.0
  */
 public class CharsetUtil {
 	private static final Map<String, Integer> CHARSET_TO_INDEX = new HashMap<String, Integer>();

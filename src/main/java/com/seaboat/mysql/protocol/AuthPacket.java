@@ -6,12 +6,13 @@ import com.seaboat.mysql.protocol.util.BufferUtil;
 
 /**
  * 
- * @author seaboat
- * @date 2016-09-25
- * @version 1.0
+ * <pre><b>mysql auth packet.</b></pre>
+ * @author 
+ * <pre>seaboat</pre>
  * <pre><b>email: </b>849586227@qq.com</pre>
  * <pre><b>blog: </b>http://blog.csdn.net/wangyangzhizhou</pre>
- * <p>mysql auth packet.</p>
+ * @version 1.0
+ * @see <pre>http://dev.mysql.com/doc/internals/en/connection-phase-packets.html#packet-Protocol::HandshakeResponse</pre>
  */
 public class AuthPacket extends MySQLPacket {
 	private static final byte[] FILLER = new byte[23];

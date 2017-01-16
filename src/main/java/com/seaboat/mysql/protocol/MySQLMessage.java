@@ -6,15 +6,15 @@ import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.Arrays;
 import java.util.Calendar;
-
 /**
  * 
- * @author seaboat
- * @date 2016-09-25
- * @version 1.0
+ * <pre><b>MySQLMessage provides mysql byte operation.</b></pre>
+ * @author 
+ * <pre>seaboat</pre>
  * <pre><b>email: </b>849586227@qq.com</pre>
  * <pre><b>blog: </b>http://blog.csdn.net/wangyangzhizhou</pre>
- * <p>MySQLMessage provides mysql byte operation.</p>
+ * @version 1.0
+ * @see http://dev.mysql.com/doc/internals/en/mysql-packet.html
  */
 public class MySQLMessage {
 	public static final long NULL_LENGTH = -1;

@@ -6,17 +6,15 @@ import java.nio.ByteBuffer;
 
 import org.junit.Test;
 
-import com.seaboat.mysql.protocol.OKPacket;
 import com.seaboat.mysql.protocol.util.HexUtil;
-
 /**
  * 
- * @author seaboat
- * @date 2016-09-25
- * @version 1.0
+ * <pre><b>test init db packet.</b></pre>
+ * @author 
+ * <pre>seaboat</pre>
  * <pre><b>email: </b>849586227@qq.com</pre>
  * <pre><b>blog: </b>http://blog.csdn.net/wangyangzhizhou</pre>
- * <p>test init db packet.</p>
+ * @version 1.0
  */
 public class InitDBPacketTest {
 	@Test
