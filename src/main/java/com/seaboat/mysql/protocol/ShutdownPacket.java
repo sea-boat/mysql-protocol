@@ -6,27 +6,28 @@ import com.seaboat.mysql.protocol.util.BufferUtil;
 
 /**
  * 
- * <pre><b>ping command packet.</b></pre>
+ * <pre><b>ping shutdown packet.</b></pre>
  * @author 
  * <pre>seaboat</pre>
  * <pre><b>email: </b>849586227@qq.com</pre>
  * <pre><b>blog: </b>http://blog.csdn.net/wangyangzhizhou</pre>
  * @version 1.0
- * @see http://dev.mysql.com/doc/internals/en/com-ping.html
+ * @see http://dev.mysql.com/doc/internals/en/com-shutdown.html
  */
 
-public class PingPacket extends MySQLPacket {
+public class ShutdownPacket extends MySQLPacket {
 
-	public byte payload;
-	
+	//default value
+	public byte type = 0;
+
 	@Override
 	public int calcPacketSize() {
-		return 1;
+		return 2;
 	}
 
 	@Override
 	protected String getPacketInfo() {
-		return "MySQL Ping Packet";
+		return "MySQL Shutdown Packet";
 	}
 
 	@Override
@@ -34,7 +35,8 @@ public class PingPacket extends MySQLPacket {
 		MySQLMessage mm = new MySQLMessage(data);
 		packetLength = mm.readUB3();
 		packetId = mm.read();
-		payload = mm.read();
+		if (packetLength == 2)
+			type = mm.read();
 	}
 
 	@Override
@@ -42,7 +44,8 @@ public class PingPacket extends MySQLPacket {
 		int size = calcPacketSize();
 		BufferUtil.writeUB3(buffer, size);
 		buffer.put(packetId);
-		buffer.put(COM_PING);
+		buffer.put(COM_SHUTDOWN);
+		buffer.put(type);
 	}
 
 }

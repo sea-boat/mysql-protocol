@@ -16,9 +16,6 @@ import com.seaboat.mysql.protocol.util.BufferUtil;
  */
 public class OKPacket extends MySQLPacket {
 	public static final byte HEADER = 0x00;
-	public static final byte[] OK = new byte[] { 7, 0, 0, 1, 0, 0, 0, 2, 0, 0,
-			0 };
-
 	public byte header = HEADER;
 	public long affectedRows;
 	public long insertId;

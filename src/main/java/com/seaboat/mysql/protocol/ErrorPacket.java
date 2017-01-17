@@ -16,12 +16,9 @@ import com.seaboat.mysql.protocol.util.BufferUtil;
  */
 public class ErrorPacket extends MySQLPacket {
 	public static final byte header = (byte) 0xff;
-	private static final byte SQLSTATE_MARKER = (byte) '#';
-	private static final byte[] DEFAULT_SQLSTATE = "HY000".getBytes();
-
 	public int errno;
-	public byte mark = SQLSTATE_MARKER;
-	public byte[] sqlState = DEFAULT_SQLSTATE;
+	public byte mark = (byte) '#';
+	public byte[] sqlState = "HY000".getBytes();
 	public byte[] message;
 
 	@Override
@@ -31,7 +28,7 @@ public class ErrorPacket extends MySQLPacket {
 		packetId = mm.read();
 		mm.read();
 		errno = mm.readUB2();
-		if (mm.hasRemaining() && (mm.read(mm.position()) == SQLSTATE_MARKER)) {
+		if (mm.hasRemaining() && (mm.read(mm.position()) == (byte) '#')) {
 			mm.read();
 			sqlState = mm.readBytes(5);
 		}

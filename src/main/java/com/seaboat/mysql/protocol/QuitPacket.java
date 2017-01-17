@@ -15,8 +15,6 @@ import com.seaboat.mysql.protocol.util.BufferUtil;
  * @see http://dev.mysql.com/doc/internals/en/com-quit.html
  */
 public class QuitPacket extends MySQLPacket {
-	// payload length is 1,packet id is 0,payload is 1
-	public static final byte[] QUIT = new byte[] { 1, 0, 0, 0, 1 };
 
 	public byte payload;
 	
@@ -43,7 +41,7 @@ public class QuitPacket extends MySQLPacket {
 		int size = calcPacketSize();
 		BufferUtil.writeUB3(buffer, size);
 		buffer.put(packetId);
-		buffer.put(payload);
+		buffer.put(COM_QUIT);
 	}
 
 }
