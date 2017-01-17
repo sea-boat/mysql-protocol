@@ -6,15 +6,15 @@ import com.seaboat.mysql.protocol.util.BufferUtil;
 
 /**
  * 
- * <pre><b>mysql init db packet.</b></pre>
+ * <pre><b>mysql drop db packet.</b></pre>
  * @author 
  * <pre>seaboat</pre>
  * <pre><b>email: </b>849586227@qq.com</pre>
  * <pre><b>blog: </b>http://blog.csdn.net/wangyangzhizhou</pre>
  * @version 1.0
- * @see http://dev.mysql.com/doc/internals/en/com-init-db.html
+ * @see http://dev.mysql.com/doc/internals/en/com-drop-db.html
  */
-public class InitDBPacket extends MySQLPacket {
+public class DropDBPacket extends MySQLPacket {
 	public byte flag;
 	public byte[] schema;
 
@@ -31,7 +31,7 @@ public class InitDBPacket extends MySQLPacket {
 	public void write(ByteBuffer buffer) {
 		BufferUtil.writeUB3(buffer, calcPacketSize());
 		buffer.put(packetId);
-		buffer.put(COM_INIT_DB);
+		buffer.put(COM_DROP_DB);
 		buffer.put(schema);
 	}
 
@@ -44,7 +44,7 @@ public class InitDBPacket extends MySQLPacket {
 
 	@Override
 	protected String getPacketInfo() {
-		return "MySQL Init DB Packet";
+		return "MySQL Drop DB Packet";
 	}
 
 }
