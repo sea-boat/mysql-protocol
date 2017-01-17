@@ -27,6 +27,7 @@ public class HandshakePacket extends MySQLPacket {
 	public int serverStatus;
 	public byte[] restOfScrambleBuff;
 
+	@Override
 	public void read(byte[] data) {
 		MySQLMessage mm = new MySQLMessage(data);
 		packetLength = mm.readUB3();
@@ -53,20 +54,21 @@ public class HandshakePacket extends MySQLPacket {
 		size += 1;// 1
 		return size;
 	}
-	
+
+	@Override
 	public void write(ByteBuffer buffer) {
-        BufferUtil.writeUB3(buffer, calcPacketSize());
-        buffer.put(packetId);
-        buffer.put(protocolVersion);
-        BufferUtil.writeWithNull(buffer, serverVersion);
-        BufferUtil.writeUB4(buffer, threadId);
-        BufferUtil.writeWithNull(buffer, seed);
-        BufferUtil.writeUB2(buffer, serverCapabilities);
-        buffer.put(serverCharsetIndex);
-        BufferUtil.writeUB2(buffer, serverStatus);
-        buffer.put(FILLER_13);
-        BufferUtil.writeWithNull(buffer, restOfScrambleBuff);
-    }
+		BufferUtil.writeUB3(buffer, calcPacketSize());
+		buffer.put(packetId);
+		buffer.put(protocolVersion);
+		BufferUtil.writeWithNull(buffer, serverVersion);
+		BufferUtil.writeUB4(buffer, threadId);
+		BufferUtil.writeWithNull(buffer, seed);
+		BufferUtil.writeUB2(buffer, serverCapabilities);
+		buffer.put(serverCharsetIndex);
+		BufferUtil.writeUB2(buffer, serverStatus);
+		buffer.put(FILLER_13);
+		BufferUtil.writeWithNull(buffer, restOfScrambleBuff);
+	}
 
 	@Override
 	protected String getPacketInfo() {

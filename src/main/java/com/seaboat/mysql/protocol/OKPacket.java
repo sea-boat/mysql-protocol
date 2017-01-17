@@ -3,6 +3,7 @@ package com.seaboat.mysql.protocol;
 import java.nio.ByteBuffer;
 
 import com.seaboat.mysql.protocol.util.BufferUtil;
+
 /**
  * 
  * <pre><b>mysql ok packet.</b></pre>
@@ -25,6 +26,7 @@ public class OKPacket extends MySQLPacket {
 	public int warningCount;
 	public byte[] message;
 
+	@Override
 	public void read(byte[] data) {
 		MySQLMessage mm = new MySQLMessage(data);
 		packetLength = mm.readUB3();
@@ -39,6 +41,7 @@ public class OKPacket extends MySQLPacket {
 		}
 	}
 
+	@Override
 	public void write(ByteBuffer buffer) {
 		BufferUtil.writeUB3(buffer, calcPacketSize());
 		buffer.put(packetId);

@@ -1,4 +1,7 @@
 package com.seaboat.mysql.protocol;
+
+import java.nio.ByteBuffer;
+
 /**
  * 
  * <pre><b>MySQLPacket is mysql's basic packet.</b></pre>
@@ -75,6 +78,10 @@ public abstract class MySQLPacket {
 	public abstract int calcPacketSize();
 
 	protected abstract String getPacketInfo();
+
+	public abstract void read(byte[] data);
+
+	public abstract void write(ByteBuffer buffer);
 
 	@Override
 	public String toString() {

@@ -25,6 +25,7 @@ public class AuthPacket extends MySQLPacket {
 	public byte[] password;
 	public String database;
 
+	@Override
 	public void read(byte[] data) {
 		MySQLMessage mm = new MySQLMessage(data);
 		packetLength = mm.readUB3();
@@ -48,6 +49,7 @@ public class AuthPacket extends MySQLPacket {
 		}
 	}
 
+	@Override
 	public void write(ByteBuffer buffer) {
 		BufferUtil.writeUB3(buffer, calcPacketSize());
 		buffer.put(packetId);
