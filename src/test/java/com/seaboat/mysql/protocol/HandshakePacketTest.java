@@ -12,6 +12,7 @@ import com.seaboat.mysql.protocol.HandshakePacket;
 import com.seaboat.mysql.protocol.Versions;
 import com.seaboat.mysql.protocol.util.HexUtil;
 import com.seaboat.mysql.protocol.util.RandomUtil;
+
 /**
  * 
  * <pre><b>test handshake packet.</b></pre>

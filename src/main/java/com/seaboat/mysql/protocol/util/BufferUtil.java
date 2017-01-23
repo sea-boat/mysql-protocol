@@ -4,12 +4,12 @@ import java.nio.ByteBuffer;
 
 /**
  * 
- * @author seaboat
- * @date 2016-09-25
- * @version 1.0
+ * <pre><b>a buffer tui.</b></pre>
+ * @author 
+ * <pre>seaboat</pre>
  * <pre><b>email: </b>849586227@qq.com</pre>
  * <pre><b>blog: </b>http://blog.csdn.net/wangyangzhizhou</pre>
- * <p>a buffer tuil .</p>
+ * @version 1.0
  */
 public class BufferUtil {
 

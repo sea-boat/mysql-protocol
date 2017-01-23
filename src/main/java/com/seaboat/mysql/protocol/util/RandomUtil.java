@@ -2,12 +2,12 @@ package com.seaboat.mysql.protocol.util;
 
 /**
  * 
- * @author seaboat
- * @date 2016-09-25
- * @version 1.0
+ * <pre><b>a random util.</b></pre>
+ * @author 
+ * <pre>seaboat</pre>
  * <pre><b>email: </b>849586227@qq.com</pre>
  * <pre><b>blog: </b>http://blog.csdn.net/wangyangzhizhou</pre>
- * <p>a random util .</p>
+ * @version 1.0
  */
 public class RandomUtil {
 	private static final byte[] bytes = { '1', '2', '3', '4', '5', '6', '7',
