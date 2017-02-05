@@ -20,11 +20,11 @@ import com.seaboat.mysql.protocol.util.HexUtil;
 public class PingPacketTest {
 	@Test
 	public void produce() {
-		QuitPacket quit = new QuitPacket();
-		quit.payload = 14;
-		quit.packetId = 0;
+		PingPacket ping = new PingPacket();
+		ping.payload = 14;
+		ping.packetId = 0;
 		ByteBuffer buffer = ByteBuffer.allocate(256);
-		quit.write(buffer);
+		ping.write(buffer);
 		buffer.flip();
 		byte[] bytes = new byte[buffer.remaining()];
 		buffer.get(bytes, 0, bytes.length);
@@ -33,8 +33,8 @@ public class PingPacketTest {
 		assertTrue(Integer.valueOf(result.substring(0, 2), 16) == result
 				.length() / 2 - 4);
 
-		QuitPacket quit2 = new QuitPacket();
-		quit2.read(bytes);
+		PingPacket ping2 = new PingPacket();
+		ping2.read(bytes);
 		assertTrue(result.equals("010000000E"));
 	}
 
