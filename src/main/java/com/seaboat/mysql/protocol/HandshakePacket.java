@@ -46,12 +46,12 @@ public class HandshakePacket extends MySQLPacket {
 	@Override
 	public int calcPacketSize() {
 		int size = 1;
-		size += serverVersion.length;// n
-		size += 5;// 1+4
-		size += seed.length;// 8
-		size += 19;// 1+2+1+2+13
-		size += restOfScrambleBuff.length;// 12
-		size += 1;// 1
+		size += serverVersion.length;
+		size += 5;
+		size += seed.length;
+		size += 19;
+		size += restOfScrambleBuff.length;
+		size += 1;
 		return size;
 	}
 
