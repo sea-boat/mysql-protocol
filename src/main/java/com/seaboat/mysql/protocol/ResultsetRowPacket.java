@@ -1,7 +1,6 @@
 package com.seaboat.mysql.protocol;
 
 import java.nio.ByteBuffer;
-import java.util.ArrayList;
 import java.util.List;
 
 import com.seaboat.mysql.protocol.util.BufferUtil;
