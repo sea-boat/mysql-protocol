@@ -11,7 +11,7 @@ import java.nio.ByteBuffer;
  * <pre><b>blog: </b>http://blog.csdn.net/wangyangzhizhou</pre>
  * @version 1.0
  */
-public abstract class MySQLPacket {
+public abstract class MysqlPacket {
 
 	public static final byte COM_SLEEP = 0;
 

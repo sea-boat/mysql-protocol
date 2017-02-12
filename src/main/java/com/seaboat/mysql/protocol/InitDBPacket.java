@@ -14,13 +14,13 @@ import com.seaboat.mysql.protocol.util.BufferUtil;
  * @version 1.0
  * @see http://dev.mysql.com/doc/internals/en/com-init-db.html
  */
-public class InitDBPacket extends MySQLPacket {
+public class InitDBPacket extends MysqlPacket {
 	public byte flag;
 	public byte[] schema;
 
 	@Override
 	public void read(byte[] data) {
-		MySQLMessage mm = new MySQLMessage(data);
+		MysqlMessage mm = new MysqlMessage(data);
 		packetLength = mm.readUB3();
 		packetId = mm.read();
 		flag = mm.read();

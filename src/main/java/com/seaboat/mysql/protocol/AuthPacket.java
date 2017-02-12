@@ -14,7 +14,7 @@ import com.seaboat.mysql.protocol.util.BufferUtil;
  * @version 1.0
  * @see <pre>http://dev.mysql.com/doc/internals/en/connection-phase-packets.html#packet-Protocol::HandshakeResponse</pre>
  */
-public class AuthPacket extends MySQLPacket {
+public class AuthPacket extends MysqlPacket {
 	private static final byte[] FILLER = new byte[23];
 
 	public long clientFlags;
@@ -27,7 +27,7 @@ public class AuthPacket extends MySQLPacket {
 
 	@Override
 	public void read(byte[] data) {
-		MySQLMessage mm = new MySQLMessage(data);
+		MysqlMessage mm = new MysqlMessage(data);
 		packetLength = mm.readUB3();
 		packetId = mm.read();
 		clientFlags = mm.readUB4();

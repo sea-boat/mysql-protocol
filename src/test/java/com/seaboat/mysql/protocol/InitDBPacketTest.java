@@ -23,7 +23,7 @@ public class InitDBPacketTest {
 		InitDBPacket initDB = new InitDBPacket();
 		initDB.packetId = 2;
 		initDB.schema = table;
-		initDB.flag = MySQLPacket.COM_INIT_DB;
+		initDB.flag = MysqlPacket.COM_INIT_DB;
 		ByteBuffer buffer = ByteBuffer.allocate(256);
 		initDB.write(buffer);
 		buffer.flip();

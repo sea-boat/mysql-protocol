@@ -14,7 +14,7 @@ import com.seaboat.mysql.protocol.util.BufferUtil;
  * @version 1.0
  * @see http://dev.mysql.com/doc/internals/en/com-quit.html
  */
-public class QuitPacket extends MySQLPacket {
+public class QuitPacket extends MysqlPacket {
 
 	public byte payload;
 	
@@ -30,7 +30,7 @@ public class QuitPacket extends MySQLPacket {
 
 	@Override
 	public void read(byte[] data) {
-		MySQLMessage mm = new MySQLMessage(data);
+		MysqlMessage mm = new MysqlMessage(data);
 		packetLength = mm.readUB3();
 		packetId = mm.read();
 		payload = mm.read();

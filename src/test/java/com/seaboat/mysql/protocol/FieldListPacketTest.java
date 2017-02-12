@@ -26,7 +26,7 @@ public class FieldListPacketTest {
 		fieldListPacket.packetId = 2;
 		fieldListPacket.table = table;
 		fieldListPacket.fieldWildcard = fieldWildcard;
-		fieldListPacket.flag = MySQLPacket.COM_FIELD_LIST;
+		fieldListPacket.flag = MysqlPacket.COM_FIELD_LIST;
 		ByteBuffer buffer = ByteBuffer.allocate(256);
 		fieldListPacket.write(buffer);
 		buffer.flip();

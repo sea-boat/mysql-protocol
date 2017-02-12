@@ -15,7 +15,7 @@ import com.seaboat.mysql.protocol.util.BufferUtil;
  * @see http://dev.mysql.com/doc/internals/en/com-ping.html
  */
 
-public class PingPacket extends MySQLPacket {
+public class PingPacket extends MysqlPacket {
 
 	public byte payload;
 	
@@ -31,7 +31,7 @@ public class PingPacket extends MySQLPacket {
 
 	@Override
 	public void read(byte[] data) {
-		MySQLMessage mm = new MySQLMessage(data);
+		MysqlMessage mm = new MysqlMessage(data);
 		packetLength = mm.readUB3();
 		packetId = mm.read();
 		payload = mm.read();

@@ -15,7 +15,7 @@ import com.seaboat.mysql.protocol.util.BufferUtil;
  * @see http://dev.mysql.com/doc/internals/en/com-shutdown.html
  */
 
-public class ShutdownPacket extends MySQLPacket {
+public class ShutdownPacket extends MysqlPacket {
 
 	//default value
 	public byte type = 0;
@@ -32,7 +32,7 @@ public class ShutdownPacket extends MySQLPacket {
 
 	@Override
 	public void read(byte[] data) {
-		MySQLMessage mm = new MySQLMessage(data);
+		MysqlMessage mm = new MysqlMessage(data);
 		packetLength = mm.readUB3();
 		packetId = mm.read();
 		if (packetLength == 2)

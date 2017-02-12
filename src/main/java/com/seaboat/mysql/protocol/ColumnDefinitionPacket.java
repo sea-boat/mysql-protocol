@@ -14,7 +14,7 @@ import com.seaboat.mysql.protocol.util.BufferUtil;
  * @version 1.0
  * @see http://dev.mysql.com/doc/internals/en/com-query-response.html#column-definition
  */
-public class ColumnDefinitionPacket extends MySQLPacket {
+public class ColumnDefinitionPacket extends MysqlPacket {
 	private static final byte[] DEFAULT_CATALOG = "def".getBytes();
 	private static final byte NEXT_LENGTH = 0x0c;
 	private static final byte[] FILLER = { 00, 00 };
@@ -35,7 +35,7 @@ public class ColumnDefinitionPacket extends MySQLPacket {
 	public byte[] defaultValues;
 
 	public void read(byte[] data) {
-		MySQLMessage mm = new MySQLMessage(data);
+		MysqlMessage mm = new MysqlMessage(data);
 		this.packetLength = mm.readUB3();
 		this.packetId = mm.read();
 		this.catalog = mm.readBytesWithLength();

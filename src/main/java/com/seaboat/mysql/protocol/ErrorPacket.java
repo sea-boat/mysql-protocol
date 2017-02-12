@@ -14,7 +14,7 @@ import com.seaboat.mysql.protocol.util.BufferUtil;
  * @version 1.0
  * @see http://dev.mysql.com/doc/internals/en/packet-ERR_Packet.html
  */
-public class ErrorPacket extends MySQLPacket {
+public class ErrorPacket extends MysqlPacket {
 	public static final byte header = (byte) 0xff;
 	public int errno;
 	public byte mark = (byte) '#';
@@ -23,7 +23,7 @@ public class ErrorPacket extends MySQLPacket {
 
 	@Override
 	public void read(byte[] data) {
-		MySQLMessage mm = new MySQLMessage(data);
+		MysqlMessage mm = new MysqlMessage(data);
 		packetLength = mm.readUB3();
 		packetId = mm.read();
 		mm.read();

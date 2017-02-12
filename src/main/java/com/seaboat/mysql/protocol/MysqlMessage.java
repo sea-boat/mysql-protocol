@@ -16,7 +16,7 @@ import java.util.Calendar;
  * @version 1.0
  * @see http://dev.mysql.com/doc/internals/en/mysql-packet.html
  */
-public class MySQLMessage {
+public class MysqlMessage {
 	public static final long NULL_LENGTH = -1;
 	private static final byte[] EMPTY_BYTES = new byte[0];
 
@@ -24,7 +24,7 @@ public class MySQLMessage {
 	private final int length;
 	private int position;
 
-	public MySQLMessage(byte[] data) {
+	public MysqlMessage(byte[] data) {
 		this.data = data;
 		this.length = data.length;
 		this.position = 0;

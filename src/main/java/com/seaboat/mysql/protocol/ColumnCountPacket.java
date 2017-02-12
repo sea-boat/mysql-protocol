@@ -14,12 +14,12 @@ import com.seaboat.mysql.protocol.util.BufferUtil;
  * @version 1.0
  * @see http://dev.mysql.com/doc/internals/en/com-query-response.html#text-resultset
  */
-public class ColumnCountPacket extends MySQLPacket {
+public class ColumnCountPacket extends MysqlPacket {
 
 	public int columnCount;
 
 	public void read(byte[] data) {
-		MySQLMessage mm = new MySQLMessage(data);
+		MysqlMessage mm = new MysqlMessage(data);
 		this.packetLength = mm.readUB3();
 		this.packetId = mm.read();
 		this.columnCount = (int) mm.readLength();

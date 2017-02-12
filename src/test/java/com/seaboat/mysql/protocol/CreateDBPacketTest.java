@@ -24,7 +24,7 @@ public class CreateDBPacketTest {
 		CreateDBPacket createDB = new CreateDBPacket();
 		createDB.packetId = 2;
 		createDB.schema = table;
-		createDB.flag = MySQLPacket.COM_CREATE_DB;
+		createDB.flag = MysqlPacket.COM_CREATE_DB;
 		ByteBuffer buffer = ByteBuffer.allocate(256);
 		createDB.write(buffer);
 		buffer.flip();

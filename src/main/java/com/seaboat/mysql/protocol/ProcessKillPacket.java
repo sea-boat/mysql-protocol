@@ -14,14 +14,14 @@ import com.seaboat.mysql.protocol.util.BufferUtil;
  * @version 1.0
  * @see http://dev.mysql.com/doc/internals/en/com-process-kill.html
  */
-public class ProcessKillPacket extends MySQLPacket {
+public class ProcessKillPacket extends MysqlPacket {
 
 	public byte flag = (byte) 0xfe;
 	public int connectionId;
 
 	@Override
 	public void read(byte[] data) {
-		MySQLMessage mm = new MySQLMessage(data);
+		MysqlMessage mm = new MysqlMessage(data);
 		packetLength = mm.readUB3();
 		packetId = mm.read();
 		flag = mm.read();

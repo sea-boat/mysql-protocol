@@ -14,7 +14,7 @@ import com.seaboat.mysql.protocol.util.BufferUtil;
  * @version 1.0
  * @see http://dev.mysql.com/doc/internals/en/packet-OK_Packet.html
  */
-public class OKPacket extends MySQLPacket {
+public class OKPacket extends MysqlPacket {
 	public static final byte HEADER = 0x00;
 	public byte header = HEADER;
 	public long affectedRows;
@@ -22,10 +22,12 @@ public class OKPacket extends MySQLPacket {
 	public int serverStatus;
 	public int warningCount;
 	public byte[] message;
+	public static final byte[] OK = new byte[] { 7, 0, 0, 1, 0, 0, 0, 2, 0, 0,
+			0 };
 
 	@Override
 	public void read(byte[] data) {
-		MySQLMessage mm = new MySQLMessage(data);
+		MysqlMessage mm = new MysqlMessage(data);
 		packetLength = mm.readUB3();
 		packetId = mm.read();
 		header = mm.read();

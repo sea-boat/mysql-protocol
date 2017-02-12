@@ -14,7 +14,7 @@ import com.seaboat.mysql.protocol.util.BufferUtil;
  * @version 1.0
  * @see http://dev.mysql.com/doc/internals/en/com-statistics.html
  */
-public class StatisticsPacket extends MySQLPacket {
+public class StatisticsPacket extends MysqlPacket {
 
 	public byte payload;
 	
@@ -30,7 +30,7 @@ public class StatisticsPacket extends MySQLPacket {
 
 	@Override
 	public void read(byte[] data) {
-		MySQLMessage mm = new MySQLMessage(data);
+		MysqlMessage mm = new MysqlMessage(data);
 		packetLength = mm.readUB3();
 		packetId = mm.read();
 		payload = mm.read();

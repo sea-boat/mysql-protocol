@@ -24,7 +24,7 @@ public class DropDBPacketTest {
 		DropDBPacket dropDB = new DropDBPacket();
 		dropDB.packetId = 2;
 		dropDB.schema = table;
-		dropDB.flag = MySQLPacket.COM_DROP_DB;
+		dropDB.flag = MysqlPacket.COM_DROP_DB;
 		ByteBuffer buffer = ByteBuffer.allocate(256);
 		dropDB.write(buffer);
 		buffer.flip();

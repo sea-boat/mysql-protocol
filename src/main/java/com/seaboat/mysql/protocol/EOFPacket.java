@@ -14,7 +14,7 @@ import com.seaboat.mysql.protocol.util.BufferUtil;
  * @version 1.0
  * @see http://dev.mysql.com/doc/internals/en/packet-EOF_Packet.html
  */
-public class EOFPacket extends MySQLPacket {
+public class EOFPacket extends MysqlPacket {
 
 	public byte header = (byte) 0xfe;
 	public int warningCount;
@@ -22,7 +22,7 @@ public class EOFPacket extends MySQLPacket {
 
 	@Override
 	public void read(byte[] data) {
-		MySQLMessage mm = new MySQLMessage(data);
+		MysqlMessage mm = new MysqlMessage(data);
 		packetLength = mm.readUB3();
 		packetId = mm.read();
 		header = mm.read();
