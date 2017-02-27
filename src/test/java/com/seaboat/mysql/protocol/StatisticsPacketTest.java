@@ -6,8 +6,8 @@ import java.nio.ByteBuffer;
 
 import org.junit.Test;
 
-import com.seaboat.mysql.protocol.OKPacket;
 import com.seaboat.mysql.protocol.util.HexUtil;
+
 /**
  * 
  * <pre><b>test statistics packet.</b></pre>

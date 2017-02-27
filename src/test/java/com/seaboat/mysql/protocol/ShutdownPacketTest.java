@@ -5,9 +5,8 @@ import static org.junit.Assert.assertTrue;
 import java.nio.ByteBuffer;
 
 import org.junit.Test;
-
-import com.seaboat.mysql.protocol.OKPacket;
 import com.seaboat.mysql.protocol.util.HexUtil;
+
 /**
  * 
  * <pre><b>test shutdown packet.</b></pre>
@@ -20,7 +19,7 @@ import com.seaboat.mysql.protocol.util.HexUtil;
 public class ShutdownPacketTest {
 	@Test
 	public void produce() {
-		ShutdownPacket shutdown= new ShutdownPacket();
+		ShutdownPacket shutdown = new ShutdownPacket();
 		shutdown.type = 0;
 		shutdown.packetId = 0;
 		ByteBuffer buffer = ByteBuffer.allocate(256);

@@ -6,8 +6,8 @@ import java.nio.ByteBuffer;
 
 import org.junit.Test;
 
-import com.seaboat.mysql.protocol.OKPacket;
 import com.seaboat.mysql.protocol.util.HexUtil;
+
 /**
  * 
  * <pre><b>test process kill packet.</b></pre>
@@ -21,7 +21,7 @@ public class ProcessKillPacketTest {
 	@Test
 	public void produce() {
 		ProcessKillPacket pk = new ProcessKillPacket();
-		pk.connectionId=10;
+		pk.connectionId = 10;
 		ByteBuffer buffer = ByteBuffer.allocate(256);
 		pk.write(buffer);
 		buffer.flip();

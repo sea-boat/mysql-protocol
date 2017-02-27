@@ -17,7 +17,10 @@ public enum ErrorCode {
 			1006, "HY000", "Can't create table '%s' (errno: %d)"), ER_ACCESS_DENIED_ERROR(
 			1045, "28000",
 			"Access denied for user '%s'@'%s' (using password: %s)"), ER_BAD_DB_ERROR(
-			1049, "42000", "Unknown database '%s'");
+			1049, "42000", "Unknown database '%s'"), ER_UNKNOWN_CHARACTER_SET(
+			1115, "42000", "Unknown character set: '%s'"), ER_NOT_ALLOWED_COMMAND(
+			1148, "42000",
+			"The used command is not allowed with this MySQL version");
 	public int code;
 	public String sqlState;
 	public String message;
