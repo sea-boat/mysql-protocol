@@ -1,4 +1,4 @@
-package com.seaboat.mysql.protocol;
+package com.seaboat.mysql.protocol.util;
 
 import java.util.HashMap;
 import java.util.Map;
