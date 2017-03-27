@@ -7,9 +7,9 @@ import java.nio.ByteBuffer;
 import org.junit.Test;
 
 import com.seaboat.mysql.protocol.Capabilities;
-import com.seaboat.mysql.protocol.CharsetUtil;
 import com.seaboat.mysql.protocol.HandshakePacket;
 import com.seaboat.mysql.protocol.Versions;
+import com.seaboat.mysql.protocol.util.CharsetUtil;
 import com.seaboat.mysql.protocol.util.HexUtil;
 import com.seaboat.mysql.protocol.util.RandomUtil;
 

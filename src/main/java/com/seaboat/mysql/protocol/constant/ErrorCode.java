@@ -20,7 +20,8 @@ public enum ErrorCode {
 			1049, "42000", "Unknown database '%s'"), ER_UNKNOWN_CHARACTER_SET(
 			1115, "42000", "Unknown character set: '%s'"), ER_NOT_ALLOWED_COMMAND(
 			1148, "42000",
-			"The used command is not allowed with this MySQL version");
+			"The used command is not allowed with this MySQL version"), ER_ERROR_DURING_COMMIT(
+			1180, "HY000", "Got error %d during COMMIT");
 	public int code;
 	public String sqlState;
 	public String message;

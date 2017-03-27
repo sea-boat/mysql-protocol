@@ -6,6 +6,7 @@ import java.nio.ByteBuffer;
 
 import org.junit.Test;
 
+import com.seaboat.mysql.protocol.util.CharsetUtil;
 import com.seaboat.mysql.protocol.util.HexUtil;
 
 /**
