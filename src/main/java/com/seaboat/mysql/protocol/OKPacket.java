@@ -22,9 +22,12 @@ public class OKPacket extends MysqlPacket {
 	public int serverStatus;
 	public int warningCount;
 	public byte[] message;
-	//there is not always to produce OKPacket,sometimies we can use OK byte[] directly.
+	// there is no need to produce OKPacket every time,sometimes we can use OK
+	// byte[] directly.
 	public static final byte[] OK = new byte[] { 7, 0, 0, 1, 0, 0, 0, 2, 0, 0,
 			0 };
+	private static final byte[] AC_OFF = new byte[] { 7, 0, 0, 1, 0, 0, 0, 0,
+			0, 0, 0 };
 
 	@Override
 	public void read(byte[] data) {
